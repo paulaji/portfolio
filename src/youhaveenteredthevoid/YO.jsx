@@ -1,6 +1,6 @@
 import React from 'react'
 
-const O = () => {
+const YO = () => {
     return (
         <div
             className={`fixed top-0 h-dvh w-dvw flex justify-center items-center flex-col bg-white`}
@@ -12,4 +12,4 @@ const O = () => {
     )
 }
 
-export default O
+export default YO

@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import Y from "./youhaveenteredthevoid/Y";
-import O from "./youhaveenteredthevoid/O";
-import U from "./youhaveenteredthevoid/U";
+import YO from "./youhaveenteredthevoid/YO";
+import YOU from "./youhaveenteredthevoid/YOU";
 
 export const LoadingScreen = () => {
     const [fontSize, setFontSize] = useState(16);
     const [endText, setEndText] = useState(false);
+
     const [showY, setShowY] = useState(true);
-    const [showO, setShowO] = useState(false);
-    const [showU, setShowU] = useState(false);
+    const [showYO, setShowYO] = useState(false);
+    const [showYOU, setShowYOU] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,19 +37,19 @@ export const LoadingScreen = () => {
             // Show Y for 200ms
             const timerY = setTimeout(() => {
                 setShowY(false);
-                setShowO(true); // Show O after Y
+                setShowYO(true); // Show YO after Y
             }, 200);
 
-            // Show O for 200ms, then show U
-            const timerO = setTimeout(() => {
-                setShowO(false);
-                setShowU(true); // Show U after O
+            // Show YO for 200ms
+            const timerYO = setTimeout(() => {
+                setShowYO(false);
+                setShowYOU(true); // Show YOU after YO
             }, 400);
 
             // Clear timeouts when components unmount
             return () => {
                 clearTimeout(timerY);
-                clearTimeout(timerO);
+                clearTimeout(timerYO);
             };
         }
     }, [endText]);
@@ -69,8 +70,8 @@ export const LoadingScreen = () => {
             {endText && (
                 <div>
                     {showY && <Y />}
-                    {showO && <O />}
-                    {showU && <U />}
+                    {showYO && <YO />}
+                    {showYOU && <YOU />}
                 </div>
             )}
         </div>
