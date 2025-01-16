@@ -20,10 +20,10 @@ export const LoadingScreen = () => {
     return (
         <div className="relative h-[100rem] overflow-x-hidden">
             <div
-                className="fixed top-0 h-dvh w-dvw font-mono text-white flex justify-center items-center"
+                className="fixed top-0 h-dvh w-dvw text-white flex justify-center items-center flex-col"
                 style={{ fontSize: `${fontSize}px` }}
             >
-                <p className="text-red-700">hello.</p>
+                <p className="text-slate-950 font-thin">scroll to enter the <span className="line-through">void</span> world</p>
             </div>
         </div>
     );
